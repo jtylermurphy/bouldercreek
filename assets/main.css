@@ -377,7 +377,9 @@ footer {
     footer li a {
       color: #fff;
       text-decoration: none; }
-
+footer a {
+  color: #fff;
+}
 .slide {
   color: #fff;
   min-height: 400px;
