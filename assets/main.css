@@ -317,6 +317,10 @@ p {
   margin-bottom: 10px;
   font-weight: bold; }
 
+a h4 {
+  color: white;
+  text-decoration: none; }
+
 .site-header {
   display: flex;
   width: 100%;
