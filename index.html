@@ -18,7 +18,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+    function onSubmit(token) {
+      document.getElementById("invisible-recaptcha-form").submit();
+    }
+  </script>
 
   <link rel="canonical" href="http://localhost:4000/">
   <link rel="alternate" type="application/rss+xml" title="Boulder Creek Landscape" href="/feed.xml">
@@ -32,10 +37,12 @@
     <header class="site-header" role="banner">
   <div class="container">
     <nav class="navbar navbar-expand-lg">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <!--<span class="navbar-toggler-icon"></span>-->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"></path></svg>
+        </button>
   <a class="navbar-brand" href="#"><img src="assets/images/boulder_logo.png" alt="Boulder Creek Landscape Logo"></a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-</button>
+
 
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 <ul class="navbar-nav mr-auto">
@@ -141,7 +148,7 @@
     <h1>Boulder Creek Lawn &amp; Landscape</h1>
     <h3><a href="tel:+15736191252">(573) 619-1252</a></h3>
     <!-- <p>Born out of the vision of owning and growing a lawn care and landscaping business in the year 2005, Boulder Creek Lawn &amp; Landscape was created. Owners Will and Sarah have a combined 15 years of lawn care experience. In fact, owner Sarah has a degree in Horticulture and Agronomy from Missouri State University, therefore, she can offer you some exciting options for your lawn and landscaping needs.</p> -->
-    <p>Boulder Creek Lawn & Landscape opened in 2005, a small family-owned lawn care business with a dream of creating a thriving lawn and landscaping company. Today, Boulder Creek is still growing, providing lawn services, landscaping, design and hardscaping to make your home the best on the block.</p>
+    <p>Boulder Creek Lawn & Landscape opened in 2005, a small family-owned lawn care business with a dream of creating a thriving lawn and landscaping company. Today, Boulder Creek is still growing, providing award-winning lawn services, landscaping, design and hardscaping to make your home the best on the block.</p>
 
 <p>Now, owners Will and Sarah Spurgeon rely on their years of experience, education and professional backgrounds to create award-winning, beautiful and functional outdoor spaces for you and your family: patios, pergolas, fire pits, and outdoor family living areas you can use and enjoy for years. They'll talk to you about your ideas and your style, then bring you a personalized plan that will meet your goals and your budget – and wow you.</p>
 
@@ -211,9 +218,10 @@
   <div class="footer-services col-md-3">
     <h3>Services Offered</h3>
     <ul>
-      <li><a href="lawncare.html">Lawn Care</a></li>
-      <li><a href="landscapedesign.html">Landscape Design</a></li>
+      
+      <li><a href="landscapedesign.html">Landscape &amp; Design</a></li>
       <li><a href="landscapemaintenance.html">Landscape Maintenance</a></li>
+      <li><a href="lawncare.html">Lawn Care</a></li>
       <li><a href="planting.html">Planting</a></li>
       <li><a href="mulching.html">Mulching</a></li>
       <li><a href="snowremoval.html">Snow Removal</a></li>
@@ -221,6 +229,7 @@
   </div>
   <div class="footer-Form col-md-6">
     <h3>Send us a Message!</h3>
+    <!--
     <form class="" action="https://www.enformed.io/kt4jpxsv" method="POST">
       <div class="row">
       <div class="col-md-6">
@@ -241,6 +250,21 @@
 
 
     </form>
+    -->
+    <form accept-charset="UTF-8" action="https://usebasin.com/f/a1f6086f7b32" enctype="multipart/form-data" method="POST" id="invisible-recaptcha-form">
+      <div class="row">
+        <div class="col-md-6">
+          <input type="text" name="Name" placeholder="Name"/>
+          <input type="email" id="email" name="email" placeholder="Email Address" required>
+          <button class="g-recaptcha" data-sitekey="6Lew3SMUAAAAAJ82QoS7gqOTkRI_dhYrFy1f7Sqy" data-callback='onSubmit' data-badge="inline">Send</button>
+        </div>
+        <div class="col-md-6">
+          <textarea rows="8" cols="80" name="message" required placeholder="Your Message"></textarea>
+        </div>
+      </div>
+    </form>
+
+
   </div>
   </div>
     </div>
